@@ -1,0 +1,49 @@
+body {
+  font-family: 'Exo', "Lucida Sans", Verdana, sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 260%;
+  font-weight: bold;
+  color: rgb(33, 170, 206);
+  margin-top: 40px;
+}
+h4 {
+  text-align: center;
+  margin-top: 15px;
+}
+h2 {
+  margin-top: 80px;
+  margin-bottom: 10px;
+  font-size: 140%;
+  font-weight: bold;
+}
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+#countryPie {
+  width: 75%;
+  float: left;
+}
+#countryTable {
+  width: 24%;
+  float: right;
+}
+table {
+  font-family: Arial, sans-serif;
+  font-size: 90%;
+}
+table td, th {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+tr:nth-child(even) { background: rgb(250, 250, 255); }
+tr:nth-child(odd)  { background: rgb(230, 230, 250); }
+th {
+  text-align: left;
+  font-weight: bold;
+}
