@@ -139,7 +139,7 @@ for doc in api.all_preprints():
 
 # Store the figshare IDs and associated DOIs
 with open('data/allchemrxiv.json', 'w') as f:
-    json.dump(preprints, f)
+    json.dump(preprints, f, sort_keys=True, indent=0)
 
 print(f'Found {len(preprints)} preprints')
 print(f'Now downloading full data')
@@ -150,7 +150,17 @@ for k, p in enumerate(preprints):
     data[p] = api.preprint(p)
 
 # Store the metadata
+# It's a JSON file, but in the higher-level dictionary we want
+# one element per line, so diffs are readable and small in size
 with open('data/allchemrxiv_data.json', 'w') as f:
-    json.dump(data, f)
+    first = True
+    f.write('{\n')
+    for k, v in sorted(data.items()):
+        if first:
+            first = False
+        else:
+            f.write(',\n')
+        f.write(f'"{k}": {json.dumps(v)}')
+    f.write('\n}\n')
 
 sys.exit(0)
