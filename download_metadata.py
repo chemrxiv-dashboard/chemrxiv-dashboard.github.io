@@ -168,13 +168,13 @@ print('Retrieving data about published papers')
 try:
     with open('data/doi_journal.json', 'r') as f:
         journals = json.load(f)
-except:
+except Exception:
     journals = {}
 
 for k, p in enumerate(data.values()):
     showProgress(k, len(data))
     pubdoi = p['resource_doi']
-    if pubdoi and not pubdoi in journals:
+    if pubdoi and pubdoi not in journals:
         response = requests.get(f'https://api.crossref.org/works/{pubdoi}')
         j = response.json()['message']['container-title'][0]
         journals[pubdoi] = j
