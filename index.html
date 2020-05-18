@@ -67,16 +67,18 @@ var chart = new Chart(ctx, {
 ]
         },{
             label: 'current month',
-            backgroundColor: 'rgba(99, 99, 255, 0.2)',
+            backgroundColor: 'rgba(140, 99, 255, 0.4)',
             data: [
     
 {x: '2020-05-01', y: 205},
+{x: '2020-05-28', y: 0},
 ]
         }]
     },
     options: {
         scales: {
             xAxes: [{
+                stacked: true,
                 type: 'time',
                 time: {
                     unit: 'month'

@@ -116,18 +116,19 @@ var chart = new Chart(ctx, {
     print(''']
         },{
             label: 'current month',
-            backgroundColor: 'rgba(99, 99, 255, 0.2)',
+            backgroundColor: 'rgba(140, 99, 255, 0.4)',
             data: [
     ''')
     i, j = monthly[-1]
-    d = i[:4] + '-' + i[5:] + '-01'
-    print("{x: '" + d + "', y: " + str(j) + "},")
+    print(f"{{x: '{i[:4]}-{i[5:]}-01', y: {j}}},")
+    print(f"{{x: '{i[:4]}-{i[5:]}-28', y: 0}},")
     print(''']
         }]
     },
     options: {
         scales: {
             xAxes: [{
+                stacked: true,
                 type: 'time',
                 time: {
                     unit: 'month'
