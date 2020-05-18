@@ -163,4 +163,23 @@ with open('data/allchemrxiv_data.json', 'w') as f:
         f.write(f'"{k}": {json.dumps(v)}')
     f.write('\n}\n')
 
+# Retrieve the journal names associated with each published preprint
+print('Retrieving data about published papers')
+try:
+    with open('data/doi_journal.json', 'r') as f:
+        journals = json.load(f)
+except:
+    journals = {}
+
+for k, p in enumerate(data.values()):
+    showProgress(k, len(data))
+    pubdoi = p['resource_doi']
+    if pubdoi and not pubdoi in journals:
+        response = requests.get(f'https://api.crossref.org/works/{pubdoi}')
+        j = response.json()['message']['container-title'][0]
+        journals[pubdoi] = j
+
+with open('data/doi_journal.json', 'w') as f:
+    json.dump(journals, f, sort_keys=True, indent=0)
+
 sys.exit(0)
