@@ -89,6 +89,17 @@ if __name__ == "__main__":
                 latest = d
     print(f'<h4>(data updated on {latest})</h4>')
 
+    # Number of preprints and revisions
+    ntot = len(preprints)
+    nrev = -ntot
+    for p in preprints.values():
+        nrev += p['version']
+
+    print('<div id="summary">')
+    print(f'<div id="total">{ntot} preprints</div>')
+    print(f'<div id="revisions">{nrev} revisions</div>')
+    print('</div>')
+
     monthly = []
     for i in preprints.values():
         m = i['timeline']['firstOnline']
