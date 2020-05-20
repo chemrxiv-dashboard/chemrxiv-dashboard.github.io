@@ -198,6 +198,12 @@ var chart = new Chart(ctx, {
 
     with open('data/doi_journal.json', 'r') as f:
         journals = json.load(f)
+
+    # Angewandte references are split between two journal names, merge them
+    for j in journals:
+        if ' International Edition' in journals[j]:
+            journals[j] = journals[j].replace(' International Edition', '')
+
     c = collections.Counter(journals.values())
     print('<table id="journalTable"><tr><th>Journal</th><th># preprints</th></tr>')
     for i, j in c.most_common(30):
