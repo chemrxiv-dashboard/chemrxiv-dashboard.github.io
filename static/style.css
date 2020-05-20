@@ -31,6 +31,11 @@ h2 {
   width: 24%;
   float: right;
 }
+#journalTable {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
 table {
   font-family: Arial, sans-serif;
   font-size: 90%;
@@ -64,4 +69,8 @@ th {
 #revisions {
   width: 50%;
   float: right;
+}
+
+.clear {
+  clear: both;
 }

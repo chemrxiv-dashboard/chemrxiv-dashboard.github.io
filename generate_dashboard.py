@@ -190,5 +190,20 @@ var chart = new Chart(ctx, {
     print('</table>')
     print('</div>')
 
+    print('''
+<div class="clear"></div>
+<h2>Preprints by journal</h2>
+<p>What are the journals in which ChemRxiv preprints are published (after peer review)?
+   The top journals are:</p>''')
+
+    with open('data/doi_journal.json', 'r') as f:
+        journals = json.load(f)
+    c = collections.Counter(journals.values())
+    print('<table id="journalTable"><tr><th>Journal</th><th># preprints</th></tr>')
+    for i, j in c.most_common(30):
+        print(f'<tr><td>{i}</td><td>{j}</td></tr>')
+    print('</table>')
+
+
     read_include('static/include_foot.html')
     sys.exit(0)
