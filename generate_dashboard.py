@@ -184,7 +184,7 @@ var chart = new Chart(ctx, {
     print('</script>')
 
     print('<div id="countryTable">')
-    print('<table><tr><th>Country</th><th># preprints</th></tr>')
+    print('<table><thead><tr><th>Country</th><th># preprints</th></tr></thead><tbody>')
     for i, j in c.most_common(30):
         print(f'<tr><td>{i}</td><td>{j}</td></tr>')
     print('</table>')
@@ -205,10 +205,10 @@ var chart = new Chart(ctx, {
             journals[j] = journals[j].replace(' International Edition', '')
 
     c = collections.Counter(journals.values())
-    print('<table id="journalTable"><tr><th>Journal</th><th># preprints</th></tr>')
-    for i, j in c.most_common(30):
+    print('<table id="journalTable"><thead><tr><th>Journal</th><th># preprints</th></tr></thead><tbody>')
+    for i, j in c.most_common():
         print(f'<tr><td>{i}</td><td>{j}</td></tr>')
-    print('</table>')
+    print('<tfoot><tr><td colspan="2">Show more</td></tr></tfoot></table>')
 
 
     read_include('static/include_foot.html')

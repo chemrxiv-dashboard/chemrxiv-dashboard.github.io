@@ -1,5 +1,6 @@
 body {
   font-family: 'Exo', "Lucida Sans", Verdana, sans-serif;
+  margin: 30px;
 }
 h1 {
   text-align: center;
@@ -46,9 +47,13 @@ table td, th {
   padding-left: 15px;
   padding-right: 15px;
 }
-tr:nth-child(even) { background: rgb(250, 250, 255); }
-tr:nth-child(odd)  { background: rgb(230, 230, 250); }
-th {
+tbody tr:nth-child(odd)  { background: rgb(230, 230, 250); }
+tbody tr:nth-child(even), thead { background: rgb(250, 250, 255); }
+tfoot {
+  background: rgb(220, 220, 220); text-align: center;
+  cursor: pointer;
+}
+thead {
   text-align: left;
   font-weight: bold;
 }

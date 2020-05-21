@@ -1,3 +1,20 @@
 </div>
+
+<script>
+$( document ).ready(function() {
+  // Only show 20 rows of the table
+  $( "#journalTable tbody tr:gt(19)" ).hide();
+});
+
+// Implement "show more" table footer
+$( "tfoot" ).click(function() {
+  $table = $(this).parent();
+  $table.find("tr").show();
+  $(this).hide();
+});
+
+</script>
+
+
 </body>
 </html>
