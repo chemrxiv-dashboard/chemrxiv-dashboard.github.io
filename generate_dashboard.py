@@ -100,7 +100,7 @@ if __name__ == "__main__":
             d = d.split('T')[0]
             if d > latest:
                 latest = d
-    print(f'<h4>(data updated on {latest})</h4>')
+    print(f'<h4>(updated on {latest})</h4>')
 
     # Number of preprints and revisions
     ntot = len(preprints)
