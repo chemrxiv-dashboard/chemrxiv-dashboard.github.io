@@ -110,7 +110,7 @@ if __name__ == "__main__":
 
     print('''
 <h2>Preprints per month</h2>
-<canvas id="monthlyChart" height="120px"></canvas>
+<canvas id="monthlyChart" height="120"></canvas>
 <script>
 var ctx = document.getElementById('monthlyChart').getContext('2d');
 var chart = new Chart(ctx, {
@@ -162,7 +162,7 @@ var chart = new Chart(ctx, {
     print('''
 <h2>Preprints per country</h2>
 <div id="countryPie">
-<canvas id="countryChart" height="200px"></canvas>
+<canvas id="countryChart" height="200"></canvas>
 </div>
 <script>
 var ctx = document.getElementById('countryChart').getContext('2d');
