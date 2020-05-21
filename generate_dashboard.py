@@ -67,6 +67,19 @@ def country(s):
         return s.title()
 
 
+def homogenise_journals(journals):
+    for j in journals:
+        if ' International Edition' in journals[j]:
+            # Angewandte references are split between two journal names, merge them
+            journals[j] = journals[j].replace(' International Edition', '')
+        elif 'A European Journal' in journals[j] and 'Chemistry' in journals[j]:
+            # Chem Eur J is spelt differently sometimes
+            journals[j] = 'Chemistry: A European Journal'
+        elif 'Acta Crystallographica Section B' in journals[j]:
+            # This is just too long
+            journals[j] = 'Acta Crystallographica B'
+
+
 def read_include(filename):
     with open(filename, 'r') as f:
         print(f.read())
@@ -198,17 +211,14 @@ var chart = new Chart(ctx, {
 
     with open('data/doi_journal.json', 'r') as f:
         journals = json.load(f)
-
-    # Angewandte references are split between two journal names, merge them
-    for j in journals:
-        if ' International Edition' in journals[j]:
-            journals[j] = journals[j].replace(' International Edition', '')
+    homogenise_journals(journals)
 
     c = collections.Counter(journals.values())
     print('<table id="journalTable"><thead><tr><th>Journal</th><th># preprints</th></tr></thead><tbody>')
     for i, j in c.most_common():
-        print(f'<tr><td>{i}</td><td>{j}</td></tr>')
-    print('<tfoot><tr><td colspan="2">Show more</td></tr></tfoot></table>')
+        if j >= 3:
+            print(f'<tr><td>{i}</td><td>{j}</td></tr>')
+    print('<tfoot><tr><td colspan="2">Show all journals with at least 3 papers</td></tr></tfoot></table>')
 
 
     read_include('static/include_foot.html')
