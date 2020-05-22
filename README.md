@@ -6,6 +6,8 @@ This project provides an **[unofficial dashboard](https://chemrxiv-dashboard.git
 
 Code requires Python 3.6 or later. Data is downloaded from the figshare API with [`download_metadata.py`](download_metadata.py). This requires a figshare token, read from your home directory `~/.figshare_token`.
 
+The dashboard is generated from the data by [`generate_dashboard.py`](generate_dashboard.py).
+
 ## ChemRxiv metadata
 
 The metadata about ChemRxiv preprints is stored in two files:
