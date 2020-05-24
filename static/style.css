@@ -9,6 +9,10 @@ h1 {
   color: rgb(33, 170, 206);
   margin-top: 40px;
 }
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
 h4 {
   text-align: center;
   margin-top: 15px;
