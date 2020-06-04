@@ -1,7 +1,7 @@
 name: Daily update
 on:
   schedule:
-    - cron:  '48 * * * *'
+    - cron:  '09 * * * *'
 jobs:
   daily_update:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
       - name: Run update script
         env:
           FIGSHARE_TOKEN: ${{ secrets.FIGSHARE_TOKEN }}
-        run: echo ./update.sh
+        run: ./update.sh
       - name: List directory content
         run: ls -la
       - name: Display time again
