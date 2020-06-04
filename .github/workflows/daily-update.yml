@@ -1,7 +1,7 @@
 name: Daily update
 on:
   schedule:
-    - cron:  '25 * * * *'
+    - cron:  '52 * * * *'
 jobs:
   daily_update:
     runs-on: ubuntu-latest
@@ -10,8 +10,12 @@ jobs:
         run: echo 'The time is ${{ steps.hello.outputs.time }}.'
       - uses: actions/checkout@v2
       - name: List directory content
-        run: |
-          echo 'Content of the current directory'
-          ls -la
+        run: ls -la
+      - name: Display Python version
+        run: python3 -V
+      - name: Run update script
+        run: ./update.sh
+      - name: List directory content
+        run: ls -la
       - name: Display time again
         run: echo 'The time is now ${{ steps.hello.outputs.time }}.'
