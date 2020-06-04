@@ -115,13 +115,17 @@ class ChemRxivAPI:
 # The main program
 
 # We need a figshare API token, see https://docs.figshare.com
-# You can insert it below, or store it as text in ~/.figshare_token
+# You can insert it below, put it in environment variable FIGSHARE_TOKEN,
+# or store it as text in ~/.figshare_token
 token = 'invalid'
-try:
-    f = open(os.path.expanduser('~/.figshare_token'), 'r')
-    token = f.read().strip()
-except IOError:
-    pass
+if 'FIGSHARE_TOKEN' in os.environ:
+    token = os.environ['FIGSHARE_TOKEN']
+else:
+    try:
+        f = open(os.path.expanduser('~/.figshare_token'), 'r')
+        token = f.read().strip()
+    except IOError:
+        pass
 
 # Connect to figshare
 try:
