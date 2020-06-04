@@ -9,14 +9,22 @@ import sys
 def showProgress(n, total, prefix='', length=80, suffix='', fill='█', printEnd='\r'):
     """Display a progress bar"""
 
-    percent = int(100 * (n + 1) / total)
-    filledLength = int(length * (n + 1) // total)
-    bar = fill * filledLength + '-' * (length - filledLength)
-    if len(suffix) > 0:
-        suffix = ' ' + suffix
-    print('\r%s |%s| %s%%%s' % (prefix, bar, percent, suffix), end=printEnd)
-    if n >= total - 1:
-        print()
+    if sys.stdout.isatty():
+        # Display a progress bar
+        percent = int(100 * (n + 1) / total)
+        filledLength = int(length * (n + 1) // total)
+        bar = fill * filledLength + '-' * (length - filledLength)
+        if len(suffix) > 0:
+            suffix = ' ' + suffix
+        print('\r%s |%s| %s%%%s' % (prefix, bar, percent, suffix), end=printEnd)
+        if n >= total - 1:
+            print()
+    else:
+        # Display progress at regular intervals
+        step = total // 20
+        if n % step == 0 or n == total:
+            print(f'   {n} / {total}')
+
 
 
 class ChemRxivAPI:
