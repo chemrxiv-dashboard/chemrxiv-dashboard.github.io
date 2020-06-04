@@ -1,7 +1,7 @@
 name: Daily update
 on:
   schedule:
-    - cron:  '15 * * * *'
+    - cron:  '48 * * * *'
 jobs:
   daily_update:
     runs-on: ubuntu-latest
@@ -13,10 +13,12 @@ jobs:
         run: ls -la
       - name: Display Python version
         run: python3 -V
+      - name: Are we in a TTY
+        run: python3 -c "import sys; print(sys.stdout.isatty())"
       - name: Run update script
         env:
           FIGSHARE_TOKEN: ${{ secrets.FIGSHARE_TOKEN }}
-        run: ./update.sh
+        run: echo ./update.sh
       - name: List directory content
         run: ls -la
       - name: Display time again
