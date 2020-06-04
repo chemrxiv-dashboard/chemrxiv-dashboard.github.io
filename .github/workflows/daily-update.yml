@@ -1,0 +1,16 @@
+name: Daily update
+on:
+  schedule:
+    - cron:  '10 * * * *'
+jobs:
+  daily_update:
+    steps:
+      - name: Display current time
+        run: echo 'The time is ${{ steps.hello.outputs.time }}.'
+      - uses: actions/checkout@v2
+      - name: List directory content
+        run: |
+          echo 'Content of the current directory'
+          ls -la
+      - name: Display time again
+        run: echo 'The time is now ${{ steps.hello.outputs.time }}.'
