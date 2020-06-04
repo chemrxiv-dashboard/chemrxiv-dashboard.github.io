@@ -13,4 +13,10 @@ error() {
 ./generate_dashboard.py >| index.html || exit
 
 d=`date +'%Y-%m-%d'`
-git commit data/* index.html -m "🔄 ${d} update" && git push
+if [ -z "$GITHUB_TOKEN" ] ; then
+  msg="🔄 ${d} update"
+else
+  msg="🤖 🔄 ${d} automated update"
+fi
+
+git commit data/* index.html -m "${msg}" && git push
