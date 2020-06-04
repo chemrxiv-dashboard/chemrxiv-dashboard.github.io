@@ -1,25 +1,18 @@
 name: Daily update
 on:
   schedule:
-    - cron:  '09 * * * *'
+    - cron:  '19 * * * *'
 jobs:
   daily_update:
     runs-on: ubuntu-latest
     steps:
-      - name: Display current time
-        run: echo 'The time is ${{ steps.hello.outputs.time }}.'
       - uses: actions/checkout@v2
-      - name: List directory content
-        run: ls -la
       - name: Display Python version
         run: python3 -V
-      - name: Are we in a TTY
-        run: python3 -c "import sys; print(sys.stdout.isatty())"
       - name: Run update script
         env:
           FIGSHARE_TOKEN: ${{ secrets.FIGSHARE_TOKEN }}
-        run: ./update.sh
-      - name: List directory content
-        run: ls -la
-      - name: Display time again
-        run: echo 'The time is now ${{ steps.hello.outputs.time }}.'
+        run: |
+          git config --global user.name 'Daily update script'
+          git config --global user.email 'fxcoudert@users.noreply.github.com'
+          ./update.sh
