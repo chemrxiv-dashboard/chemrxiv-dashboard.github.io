@@ -5,15 +5,11 @@
 # Run with no arguments:
 #   ./update.sh
 
-error() {
-  exit 1
-}
-
-./download_metadata.py || exit
-./generate_dashboard.py >| index.html || exit
+./download_metadata.py || exit 1
+./generate_dashboard.py >| index.html || exit 1
 
 d=`date +'%Y-%m-%d'`
-if [ -z "$GITHUB_TOKEN" ] ; then
+if [ -z "$GITHUB_ACTIONS" ] ; then
   msg="🔄 ${d} update"
 else
   msg="🤖 🔄 ${d} automated update"
