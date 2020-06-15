@@ -62,9 +62,9 @@ class ChemRxivAPI:
     def query_generator(self, query, method='get', params={}):
         """Query for a list of items, with paging. Returns a generator."""
 
-        n = 0
+        n = 1
         while True:
-            params.update({'limit': self.pagesize, 'offset': n})
+            params.update({'page_size': self.pagesize, 'page': n})
             r = self.request(f'{self.base}/{query}', method, params)
             r.raise_for_status()
             r = r.json()
@@ -79,7 +79,7 @@ class ChemRxivAPI:
                 return
 
             yield from r
-            n += self.pagesize
+            n += 1
 
     def query_list(self, *args, **kwargs):
         """Query of a list of item, handling paging internally, returning a
