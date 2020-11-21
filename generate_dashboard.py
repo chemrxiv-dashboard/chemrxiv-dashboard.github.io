@@ -220,6 +220,5 @@ var chart = new Chart(ctx, {
             print(f'<tr><td>{i}</td><td>{j}</td></tr>')
     print('<tfoot><tr><td colspan="2">Show all journals with at least 3 papers</td></tr></tfoot></table>')
 
-
     read_include('static/include_foot.html')
     sys.exit(0)

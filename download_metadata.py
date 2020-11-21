@@ -26,7 +26,6 @@ def showProgress(n, total, prefix='', length=80, suffix='', fill='█', printEnd
             print(f'   {n} / {total}')
 
 
-
 class ChemRxivAPI:
     """Handle figshare API requests, using access token"""
 
@@ -188,8 +187,11 @@ for k, p in enumerate(data.values()):
     pubdoi = p['resource_doi']
     if pubdoi and pubdoi not in journals:
         response = requests.get(f'https://api.crossref.org/works/{pubdoi}')
-        j = response.json()['message']['container-title'][0]
-        journals[pubdoi] = j
+        try:
+            j = response.json()['message']['container-title'][0]
+            journals[pubdoi] = j
+        except Exception:
+            pass
 
 with open('data/doi_journal.json', 'w') as f:
     json.dump(journals, f, sort_keys=True, indent=0)
