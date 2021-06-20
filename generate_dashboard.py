@@ -88,6 +88,9 @@ def homogenise_journals(journals):
         elif 'Acta Crystallographica Section B' in journals[j]:
             # This is just too long
             journals[j] = 'Acta Crystallographica B'
+        elif 'Journal of The Electrochemical Society' in journals[j]:
+            # Inconsistent capitalization in CrossRef
+            journals[j] = 'Journal of the Electrochemical Society'
 
 
 def read_include(filename):
