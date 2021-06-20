@@ -196,8 +196,8 @@ var chart = new Chart(ctx, {
 
     x = c.most_common(20)
     s = sum(j for i, j in x)
-    n = len(countries)
-    x.append(('Others', n-s))
+    n = sum(c.values())
+    x.append(('Others', n - s))
 
     print(f'labels: {json.dumps([i for i,j in x])},')
     print('datasets: [{data: ' + json.dumps([j for i, j in x]) + ',')
