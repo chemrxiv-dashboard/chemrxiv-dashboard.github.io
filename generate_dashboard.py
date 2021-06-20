@@ -8,6 +8,13 @@ import sys
 
 
 def country(s):
+    s = country_lower(s)
+    if s == 'usa':
+        return 'USA'
+    else:
+        return s.title()
+
+def country_lower(s):
     s = s.lower().replace('.', '').strip()
     if s[:4] == 'the ':
         s = s[4:]
@@ -24,6 +31,8 @@ def country(s):
 
     if 'algérie' in s:
         return 'algeria'
+    if 'türkiye' in s:
+        return 'turkey'
     if 'belgique' in s:
         return 'belgium'
     if 'deutschland' in s:
@@ -36,11 +45,15 @@ def country(s):
         return 'spain'
     if 'polska' in s:
         return 'poland'
+    if 'sverige' in s:
+        return 'sweden'
+    if 'danmark' in s:
+        return 'denmark'
 
-    if 'united states' in s or 'america' in s:
-        s = 'usa'
+    if 'united state' in s or 'unites states' in s or 'america' in s:
+        return 'usa'
     if s == 'us':
-        s = 'usa'
+        return 'usa'
 
     if s == 'uk' or 'great britain' in s or 'england' in s:
         s = 'united kingdom'
@@ -51,20 +64,17 @@ def country(s):
         s = 'china'
 
     if ',' in s:
-        return country(s.split(',')[0])
+        return country_lower(s.split(',')[0])
     if ';' in s:
-        return country(s.split(';')[0])
+        return country_lower(s.split(';')[0])
     if '/' in s:
-        return country(s.split('/')[0])
+        return country_lower(s.split('/')[0])
     if ' and ' in s:
-        return country(s.split(' and ')[0])
+        return country_lower(s.split(' and ')[0])
     if ' - ' in s:
-        return country(s.split(' - ')[0])
+        return country_lower(s.split(' - ')[0])
 
-    if s == 'usa':
-        return 'USA'
-    else:
-        return s.title()
+    return s
 
 
 def homogenise_journals(journals):
@@ -96,17 +106,16 @@ if __name__ == "__main__":
     # Find the latest data
     latest = '2020-01-01'
     for p in preprints.values():
-        for d in p['timeline'].values():
-            d = d.split('T')[0]
-            if d > latest:
-                latest = d
+        d = p['statusDate'].split('T')[0]
+        if d > latest:
+            latest = d
     print(f'<h4>(updated on {latest})</h4>')
 
     # Number of preprints and revisions
     ntot = len(preprints)
     nrev = -ntot
     for p in preprints.values():
-        nrev += p['version']
+        nrev += int(p['version'])
 
     print('<div id="summary">')
     print(f'<div id="total">{ntot} preprints</div>')
@@ -115,7 +124,9 @@ if __name__ == "__main__":
 
     monthly = []
     for i in preprints.values():
-        m = i['timeline']['firstOnline']
+        # FIXME -- this should be "first publication" but it is
+        # not provided by the new API
+        m = i['publishedDate']
         monthly.append(m[:7])
 
     monthly = collections.Counter(monthly)
@@ -164,13 +175,12 @@ var chart = new Chart(ctx, {
 </script>
     ''')
 
-    countries = []
+    c = collections.Counter()
     for i in preprints.values():
-        for f in i['custom_fields']:
-            if f['name'] == 'Country':
-                countries.append(country(f['value']))
-
-    c = collections.Counter(countries)
+        countries = [y['country'] for x in i['authors'] for y in x['institutions']]
+        # Normalize country names, remove empty fields, count only once per paper
+        countries = list(set(country(x) for x in countries if x))
+        c.update(countries)
 
     print('''
 <h2>Preprints per country</h2>
