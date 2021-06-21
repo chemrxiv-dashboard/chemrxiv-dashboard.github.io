@@ -98,11 +98,17 @@ preprints = {}
 data = {}
 
 n = 0
-for doc in api.all_preprints():
+for preprint in api.all_preprints():
     showProgress(n, total)
     n += 1
-    preprints[doc['item']['id']] = doc['item']['doi']
-    data[doc['item']['id']] = doc['item']
+    doc = preprint['item']
+
+    # Remove metrics, since they change all the time
+    del doc['metrics']
+
+    # Store the remaining metadata
+    preprints[doc['id']] = doc['doi']
+    data[doc['id']] = doc
 
 # Store the preprint IDs and associated DOIs
 with open('data/allchemrxiv.json', 'w') as f:
