@@ -138,14 +138,15 @@ except Exception:
 
 for k, p in enumerate(data.values()):
     showProgress(k, len(data))
-    pubdoi = p['vor'].replace('https://doi.org/', '')
-    if pubdoi and pubdoi not in journals:
-        response = requests.get(f'https://api.crossref.org/works/{pubdoi}')
-        try:
-            j = response.json()['message']['container-title'][0]
-            journals[pubdoi] = j
-        except Exception:
-            pass
+    if p['vor']:
+        pubdoi = p['vor']['vorDoi']
+        if pubdoi not in journals:
+            response = requests.get(f'https://api.crossref.org/works/{pubdoi}')
+            try:
+                j = response.json()['message']['container-title'][0]
+                journals[pubdoi] = j
+            except Exception:
+                pass
 
 with open('data/doi_journal.json', 'w') as f:
     json.dump(journals, f, sort_keys=True, indent=0)
