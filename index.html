@@ -20,9 +20,9 @@
 <div id="container">
 <h1><a href="https://chemrxiv.org">ChemRxiv</a> dashboard</h1>
 
-<h4>(updated on 2022-01-11)</h4>
+<h4>(updated on 2022-01-12)</h4>
 <div id="summary">
-<div id="total">11300 preprints</div>
+<div id="total">11317 preprints</div>
 <div id="revisions">3172 revisions</div>
 </div>
 
@@ -87,17 +87,17 @@ var chart = new Chart(ctx, {
 {x: '2021-06-01', y: 356},
 {x: '2021-07-01', y: 330},
 {x: '2021-08-01', y: 352},
-{x: '2021-09-01', y: 373},
-{x: '2021-10-01', y: 417},
+{x: '2021-09-01', y: 374},
+{x: '2021-10-01', y: 416},
 {x: '2021-11-01', y: 368},
-{x: '2021-12-01', y: 424},
+{x: '2021-12-01', y: 422},
 ]
         },{
             label: 'current month',
             backgroundColor: 'rgba(140, 99, 255, 0.4)',
             data: [
     
-{x: '2022-01-01', y: 133},
+{x: '2022-01-01', y: 152},
 {x: '2022-01-28', y: 0},
 ]
         }]
@@ -127,44 +127,44 @@ var chart = new Chart(ctx, {
     type: 'pie',
     data: {
     
-labels: ["USA", "United Kingdom", "Germany", "China", "India", "France", "Canada", "Japan", "Switzerland", "Australia", "Sweden", "Spain", "Netherlands", "Denmark", "Italy", "Austria", "Brazil", "Belgium", "Israel", "Ireland", "Others"],
-datasets: [{data: [3607, 1099, 941, 763, 550, 514, 487, 422, 347, 275, 248, 231, 218, 172, 160, 107, 100, 92, 92, 88, 1185],
+labels: ["USA", "United Kingdom", "Germany", "China", "India", "France", "Canada", "Japan", "Switzerland", "Australia", "Sweden", "Spain", "Netherlands", "Denmark", "Italy", "Austria", "Brazil", "Israel", "Belgium", "Ireland", "Others"],
+datasets: [{data: [3609, 1101, 944, 766, 550, 514, 488, 423, 347, 275, 248, 232, 218, 173, 160, 107, 100, 93, 92, 88, 1188],
 backgroundColor: ['rgb(31 119 180)', 'rgb(255 127 14)', 'rgb(44 160 44)', 'rgb(214 39 40)', 'rgb(148 103 189)', 'rgb(140 86 75)', 'rgb(227 119 194)', 'rgb(127 127 127)', 'rgb(188 189 34)', 'rgb(23 190 229)', 'rgb(174 199 232)', 'rgb(255 187 120)', 'rgb(152 223 138)', 'rgb(255 152 150)', 'rgb(197 176 213)', 'rgb(196 156 148)', 'rgb(247 182 210)', 'rgb(180 180 180)', 'rgb(219 219 141)', 'rgb(158 218 229)', 'rgb(225 225 225)'],
 borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 }, options: {cutoutPercentage: 10}});
 </script>
 <div id="countryTable">
 <table><thead><tr><th>Country</th><th># preprints</th></tr></thead><tbody>
-<tr><td>USA</td><td>3607</td></tr>
-<tr><td>United Kingdom</td><td>1099</td></tr>
-<tr><td>Germany</td><td>941</td></tr>
-<tr><td>China</td><td>763</td></tr>
+<tr><td>USA</td><td>3609</td></tr>
+<tr><td>United Kingdom</td><td>1101</td></tr>
+<tr><td>Germany</td><td>944</td></tr>
+<tr><td>China</td><td>766</td></tr>
 <tr><td>India</td><td>550</td></tr>
 <tr><td>France</td><td>514</td></tr>
-<tr><td>Canada</td><td>487</td></tr>
-<tr><td>Japan</td><td>422</td></tr>
+<tr><td>Canada</td><td>488</td></tr>
+<tr><td>Japan</td><td>423</td></tr>
 <tr><td>Switzerland</td><td>347</td></tr>
 <tr><td>Australia</td><td>275</td></tr>
 <tr><td>Sweden</td><td>248</td></tr>
-<tr><td>Spain</td><td>231</td></tr>
+<tr><td>Spain</td><td>232</td></tr>
 <tr><td>Netherlands</td><td>218</td></tr>
-<tr><td>Denmark</td><td>172</td></tr>
+<tr><td>Denmark</td><td>173</td></tr>
 <tr><td>Italy</td><td>160</td></tr>
 <tr><td>Austria</td><td>107</td></tr>
 <tr><td>Brazil</td><td>100</td></tr>
+<tr><td>Israel</td><td>93</td></tr>
 <tr><td>Belgium</td><td>92</td></tr>
-<tr><td>Israel</td><td>92</td></tr>
 <tr><td>Ireland</td><td>88</td></tr>
 <tr><td>South Korea</td><td>83</td></tr>
 <tr><td>Singapore</td><td>80</td></tr>
-<tr><td>Poland</td><td>79</td></tr>
+<tr><td>Poland</td><td>80</td></tr>
 <tr><td>Russia</td><td>71</td></tr>
 <tr><td>Finland</td><td>67</td></tr>
 <tr><td>Portugal</td><td>44</td></tr>
 <tr><td>Turkey</td><td>39</td></tr>
 <tr><td>Norway</td><td>38</td></tr>
 <tr><td>Argentina</td><td>34</td></tr>
-<tr><td>Czech Republic</td><td>33</td></tr>
+<tr><td>Hungary</td><td>33</td></tr>
 </table>
 </div>
 
@@ -174,17 +174,17 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
    The top journals are:</p>
 <table id="journalTable"><thead><tr><th>Journal</th><th># preprints</th></tr></thead><tbody>
 <tr><td>Journal of the American Chemical Society</td><td>265</td></tr>
-<tr><td>Angewandte Chemie</td><td>234</td></tr>
+<tr><td>Angewandte Chemie</td><td>235</td></tr>
 <tr><td>Chemical Science</td><td>204</td></tr>
 <tr><td>Journal of Chemical Theory and Computation</td><td>130</td></tr>
 <tr><td>Physical Chemistry Chemical Physics</td><td>125</td></tr>
 <tr><td>The Journal of Physical Chemistry C</td><td>111</td></tr>
 <tr><td>Chemistry: A European Journal</td><td>109</td></tr>
-<tr><td>Journal of Chemical Information and Modeling</td><td>103</td></tr>
-<tr><td>Chemistry of Materials</td><td>89</td></tr>
+<tr><td>Journal of Chemical Information and Modeling</td><td>104</td></tr>
+<tr><td>Chemistry of Materials</td><td>90</td></tr>
 <tr><td>The Journal of Physical Chemistry Letters</td><td>85</td></tr>
 <tr><td>ACS Catalysis</td><td>85</td></tr>
-<tr><td>Chemical Communications</td><td>80</td></tr>
+<tr><td>Chemical Communications</td><td>81</td></tr>
 <tr><td>The Journal of Chemical Physics</td><td>75</td></tr>
 <tr><td>Nature Communications</td><td>67</td></tr>
 <tr><td>The Journal of Physical Chemistry A</td><td>65</td></tr>
@@ -377,6 +377,7 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 <tr><td>F1000Research</td><td>3</td></tr>
 <tr><td>Química Nova</td><td>3</td></tr>
 <tr><td>Frontiers in Molecular Biosciences</td><td>3</td></tr>
+<tr><td>Materials</td><td>3</td></tr>
 <tr><td>PeerJ Physical Chemistry</td><td>3</td></tr>
 <tfoot><tr><td colspan="2">Show all journals with at least 3 papers</td></tr></tfoot></table>
 </div>
