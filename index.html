@@ -20,10 +20,10 @@
 <div id="container">
 <h1><a href="https://chemrxiv.org">ChemRxiv</a> dashboard</h1>
 
-<h4>(updated on 2022-05-20)</h4>
+<h4>(updated on 2022-05-23)</h4>
 <div id="summary">
-<div id="total">12894 preprints</div>
-<div id="revisions">3581 revisions</div>
+<div id="total">12915 preprints</div>
+<div id="revisions">3588 revisions</div>
 </div>
 
 <h2>Preprints per month</h2>
@@ -92,16 +92,16 @@ var chart = new Chart(ctx, {
 {x: '2021-11-01', y: 336},
 {x: '2021-12-01', y: 380},
 {x: '2022-01-01', y: 323},
-{x: '2022-02-01', y: 336},
-{x: '2022-03-01', y: 514},
-{x: '2022-04-01', y: 403},
+{x: '2022-02-01', y: 335},
+{x: '2022-03-01', y: 513},
+{x: '2022-04-01', y: 400},
 ]
         },{
             label: 'current month',
             backgroundColor: 'rgba(140, 99, 255, 0.4)',
             data: [
     
-{x: '2022-05-01', y: 329},
+{x: '2022-05-01', y: 355},
 {x: '2022-05-28', y: 0},
 ]
         }]
@@ -132,43 +132,43 @@ var chart = new Chart(ctx, {
     data: {
     
 labels: ["USA", "United Kingdom", "Germany", "China", "India", "France", "Canada", "Japan", "Switzerland", "Australia", "Sweden", "Spain", "Netherlands", "Denmark", "Italy", "Austria", "Brazil", "Belgium", "Israel", "South Korea", "Others"],
-datasets: [{data: [4100, 1274, 1136, 891, 622, 584, 549, 516, 392, 313, 290, 270, 269, 201, 191, 125, 112, 112, 110, 100, 1372],
+datasets: [{data: [4106, 1277, 1137, 893, 622, 585, 549, 518, 393, 315, 291, 270, 269, 201, 191, 126, 112, 112, 110, 100, 1379],
 backgroundColor: ['rgb(31 119 180)', 'rgb(255 127 14)', 'rgb(44 160 44)', 'rgb(214 39 40)', 'rgb(148 103 189)', 'rgb(140 86 75)', 'rgb(227 119 194)', 'rgb(127 127 127)', 'rgb(188 189 34)', 'rgb(23 190 229)', 'rgb(174 199 232)', 'rgb(255 187 120)', 'rgb(152 223 138)', 'rgb(255 152 150)', 'rgb(197 176 213)', 'rgb(196 156 148)', 'rgb(247 182 210)', 'rgb(180 180 180)', 'rgb(219 219 141)', 'rgb(158 218 229)', 'rgb(225 225 225)'],
 borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 }, options: {cutoutPercentage: 10}});
 </script>
 <div id="countryTable">
 <table><thead><tr><th>Country</th><th># preprints</th></tr></thead><tbody>
-<tr><td>USA</td><td>4100</td></tr>
-<tr><td>United Kingdom</td><td>1274</td></tr>
-<tr><td>Germany</td><td>1136</td></tr>
-<tr><td>China</td><td>891</td></tr>
+<tr><td>USA</td><td>4106</td></tr>
+<tr><td>United Kingdom</td><td>1277</td></tr>
+<tr><td>Germany</td><td>1137</td></tr>
+<tr><td>China</td><td>893</td></tr>
 <tr><td>India</td><td>622</td></tr>
-<tr><td>France</td><td>584</td></tr>
+<tr><td>France</td><td>585</td></tr>
 <tr><td>Canada</td><td>549</td></tr>
-<tr><td>Japan</td><td>516</td></tr>
-<tr><td>Switzerland</td><td>392</td></tr>
-<tr><td>Australia</td><td>313</td></tr>
-<tr><td>Sweden</td><td>290</td></tr>
+<tr><td>Japan</td><td>518</td></tr>
+<tr><td>Switzerland</td><td>393</td></tr>
+<tr><td>Australia</td><td>315</td></tr>
+<tr><td>Sweden</td><td>291</td></tr>
 <tr><td>Spain</td><td>270</td></tr>
 <tr><td>Netherlands</td><td>269</td></tr>
 <tr><td>Denmark</td><td>201</td></tr>
 <tr><td>Italy</td><td>191</td></tr>
-<tr><td>Austria</td><td>125</td></tr>
+<tr><td>Austria</td><td>126</td></tr>
 <tr><td>Brazil</td><td>112</td></tr>
 <tr><td>Belgium</td><td>112</td></tr>
 <tr><td>Israel</td><td>110</td></tr>
 <tr><td>South Korea</td><td>100</td></tr>
 <tr><td>Poland</td><td>100</td></tr>
-<tr><td>Ireland</td><td>92</td></tr>
-<tr><td>Russia</td><td>86</td></tr>
+<tr><td>Ireland</td><td>93</td></tr>
+<tr><td>Russia</td><td>87</td></tr>
 <tr><td>Singapore</td><td>85</td></tr>
 <tr><td>Finland</td><td>76</td></tr>
-<tr><td>Portugal</td><td>51</td></tr>
+<tr><td>Portugal</td><td>52</td></tr>
 <tr><td>Norway</td><td>49</td></tr>
 <tr><td>Turkey</td><td>46</td></tr>
+<tr><td>Hungary</td><td>37</td></tr>
 <tr><td>Argentina</td><td>37</td></tr>
-<tr><td>Chile</td><td>36</td></tr>
 </table>
 </div>
 
@@ -177,12 +177,12 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 <p>What are the journals in which ChemRxiv preprints are published (after peer review)?
    The top journals are:</p>
 <table id="journalTable"><thead><tr><th>Journal</th><th># preprints</th></tr></thead><tbody>
-<tr><td>Journal of the American Chemical Society</td><td>301</td></tr>
+<tr><td>Journal of the American Chemical Society</td><td>302</td></tr>
 <tr><td>Angewandte Chemie</td><td>262</td></tr>
 <tr><td>Chemical Science</td><td>233</td></tr>
 <tr><td>Journal of Chemical Theory and Computation</td><td>157</td></tr>
 <tr><td>Physical Chemistry Chemical Physics</td><td>142</td></tr>
-<tr><td>Chemistry: A European Journal</td><td>140</td></tr>
+<tr><td>Chemistry: A European Journal</td><td>141</td></tr>
 <tr><td>The Journal of Physical Chemistry C</td><td>125</td></tr>
 <tr><td>Journal of Chemical Information and Modeling</td><td>116</td></tr>
 <tr><td>The Journal of Physical Chemistry Letters</td><td>103</td></tr>
@@ -274,6 +274,7 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 <tr><td>Electrochimica Acta</td><td>8</td></tr>
 <tr><td>Journal of Colloid and Interface Science</td><td>8</td></tr>
 <tr><td>Matter</td><td>8</td></tr>
+<tr><td>Cell Reports Physical Science</td><td>8</td></tr>
 <tr><td>Biochemistry</td><td>8</td></tr>
 <tr><td>Industrial & Engineering Chemistry Research</td><td>8</td></tr>
 <tr><td>Reaction Chemistry & Engineering</td><td>8</td></tr>
@@ -286,7 +287,6 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 <tr><td>Forensic Chemistry</td><td>7</td></tr>
 <tr><td>Journal of Molecular Liquids</td><td>7</td></tr>
 <tr><td>Tetrahedron</td><td>7</td></tr>
-<tr><td>Cell Reports Physical Science</td><td>7</td></tr>
 <tr><td>ACS Sensors</td><td>7</td></tr>
 <tr><td>Environmental Science: Processes & Impacts</td><td>7</td></tr>
 <tr><td>Sustainable Energy & Fuels</td><td>7</td></tr>
@@ -343,6 +343,7 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 <tr><td>Cell Chemical Biology</td><td>4</td></tr>
 <tr><td>Computational and Theoretical Chemistry</td><td>4</td></tr>
 <tr><td>Journal of Electroanalytical Chemistry</td><td>4</td></tr>
+<tr><td>Journal of Hazardous Materials</td><td>4</td></tr>
 <tr><td>Molecular Catalysis</td><td>4</td></tr>
 <tr><td>Journal of Chemical & Engineering Data</td><td>4</td></tr>
 <tr><td>ACS Applied Electronic Materials</td><td>4</td></tr>
@@ -379,7 +380,6 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 <tr><td>International Journal of Pharmaceutics</td><td>3</td></tr>
 <tr><td>Journal of Catalysis</td><td>3</td></tr>
 <tr><td>Journal of the European Ceramic Society</td><td>3</td></tr>
-<tr><td>Journal of Hazardous Materials</td><td>3</td></tr>
 <tr><td>Journal of Molecular Graphics and Modelling</td><td>3</td></tr>
 <tr><td>Journal of Photochemistry and Photobiology A: Chemistry</td><td>3</td></tr>
 <tr><td>Journal of Membrane Science</td><td>3</td></tr>
