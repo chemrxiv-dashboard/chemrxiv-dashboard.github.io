@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import bz2
 import json
 import os
 import requests
@@ -115,18 +116,8 @@ with open('data/allchemrxiv.json', 'w') as f:
     json.dump(preprints, f, sort_keys=True, indent=0)
 
 # Store the metadata
-# It's a JSON file, but in the higher-level dictionary we want
-# one element per line, so diffs are readable and small in size
-with open('data/allchemrxiv_data.json', 'w') as f:
-    first = True
-    f.write('{\n')
-    for k, v in sorted(data.items()):
-        if first:
-            first = False
-        else:
-            f.write(',\n')
-        f.write(f'"{k}": {json.dumps(v)}')
-    f.write('\n}\n')
+with bz2.open('data/allchemrxiv_data.json.bz2', 'wt') as f:
+    json.dump(data, f, sort_keys=True, indent=0)
 
 # Retrieve the journal names associated with each published preprint
 print('Retrieving data about published papers')
