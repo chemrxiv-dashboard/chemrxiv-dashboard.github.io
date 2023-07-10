@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import bz2
 import collections
 import datetime
 import json
@@ -101,7 +102,7 @@ def read_include(filename):
 # Main program
 if __name__ == "__main__":
 
-    with open('data/allchemrxiv_data.json', 'r') as f:
+    with bz2.open('data/allchemrxiv_data.json.bz2', 'rt') as f:
         preprints = json.load(f)
 
     read_include('static/include_head.html')
