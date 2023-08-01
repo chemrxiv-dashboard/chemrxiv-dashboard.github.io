@@ -20,10 +20,10 @@
 <div id="container">
 <h1><a href="https://chemrxiv.org">ChemRxiv</a> dashboard</h1>
 
-<h4>(updated on 2023-07-31)</h4>
+<h4>(updated on 2023-08-01)</h4>
 <div id="summary">
-<div id="total">18990 preprints</div>
-<div id="revisions">5301 revisions</div>
+<div id="total">19013 preprints</div>
+<div id="revisions">5315 revisions</div>
 </div>
 
 <h2>Preprints per month</h2>
@@ -99,24 +99,25 @@ var chart = new Chart(ctx, {
 {x: '2022-06-01', y: 421},
 {x: '2022-07-01', y: 373},
 {x: '2022-08-01', y: 378},
-{x: '2022-09-01', y: 407},
-{x: '2022-10-01', y: 449},
+{x: '2022-09-01', y: 406},
+{x: '2022-10-01', y: 448},
 {x: '2022-11-01', y: 447},
 {x: '2022-12-01', y: 403},
 {x: '2023-01-01', y: 395},
-{x: '2023-02-01', y: 412},
-{x: '2023-03-01', y: 529},
-{x: '2023-04-01', y: 475},
-{x: '2023-05-01', y: 536},
-{x: '2023-06-01', y: 498},
+{x: '2023-02-01', y: 411},
+{x: '2023-03-01', y: 528},
+{x: '2023-04-01', y: 474},
+{x: '2023-05-01', y: 534},
+{x: '2023-06-01', y: 496},
+{x: '2023-07-01', y: 521},
 ]
         },{
             label: 'current month',
             backgroundColor: 'rgba(140, 99, 255, 0.4)',
             data: [
     
-{x: '2023-07-01', y: 525},
-{x: '2023-07-28', y: 0},
+{x: '2023-08-01', y: 36},
+{x: '2023-08-28', y: 0},
 ]
         }]
     },
@@ -146,31 +147,31 @@ var chart = new Chart(ctx, {
     data: {
     
 labels: ["USA", "United Kingdom", "Germany", "China", "India", "Japan", "France", "Canada", "Switzerland", "Australia", "Netherlands", "Sweden", "Spain", "Denmark", "Italy", "Belgium", "South Korea", "Austria", "Poland", "Israel", "Others"],
-datasets: [{data: [6026, 1884, 1714, 1362, 878, 862, 840, 792, 600, 447, 423, 410, 400, 309, 303, 209, 188, 185, 177, 169, 2002],
+datasets: [{data: [6034, 1888, 1715, 1362, 879, 865, 842, 793, 602, 447, 423, 410, 400, 309, 304, 209, 188, 187, 177, 169, 2002],
 backgroundColor: ['rgb(31 119 180)', 'rgb(255 127 14)', 'rgb(44 160 44)', 'rgb(214 39 40)', 'rgb(148 103 189)', 'rgb(140 86 75)', 'rgb(227 119 194)', 'rgb(127 127 127)', 'rgb(188 189 34)', 'rgb(23 190 229)', 'rgb(174 199 232)', 'rgb(255 187 120)', 'rgb(152 223 138)', 'rgb(255 152 150)', 'rgb(197 176 213)', 'rgb(196 156 148)', 'rgb(247 182 210)', 'rgb(180 180 180)', 'rgb(219 219 141)', 'rgb(158 218 229)', 'rgb(225 225 225)'],
 borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 }, options: {cutoutPercentage: 10}});
 </script>
 <div id="countryTable">
 <table><thead><tr><th>Country</th><th># preprints</th></tr></thead><tbody>
-<tr><td>USA</td><td>6026</td></tr>
-<tr><td>United Kingdom</td><td>1884</td></tr>
-<tr><td>Germany</td><td>1714</td></tr>
+<tr><td>USA</td><td>6034</td></tr>
+<tr><td>United Kingdom</td><td>1888</td></tr>
+<tr><td>Germany</td><td>1715</td></tr>
 <tr><td>China</td><td>1362</td></tr>
-<tr><td>India</td><td>878</td></tr>
-<tr><td>Japan</td><td>862</td></tr>
-<tr><td>France</td><td>840</td></tr>
-<tr><td>Canada</td><td>792</td></tr>
-<tr><td>Switzerland</td><td>600</td></tr>
+<tr><td>India</td><td>879</td></tr>
+<tr><td>Japan</td><td>865</td></tr>
+<tr><td>France</td><td>842</td></tr>
+<tr><td>Canada</td><td>793</td></tr>
+<tr><td>Switzerland</td><td>602</td></tr>
 <tr><td>Australia</td><td>447</td></tr>
 <tr><td>Netherlands</td><td>423</td></tr>
 <tr><td>Sweden</td><td>410</td></tr>
 <tr><td>Spain</td><td>400</td></tr>
 <tr><td>Denmark</td><td>309</td></tr>
-<tr><td>Italy</td><td>303</td></tr>
+<tr><td>Italy</td><td>304</td></tr>
 <tr><td>Belgium</td><td>209</td></tr>
 <tr><td>South Korea</td><td>188</td></tr>
-<tr><td>Austria</td><td>185</td></tr>
+<tr><td>Austria</td><td>187</td></tr>
 <tr><td>Poland</td><td>177</td></tr>
 <tr><td>Israel</td><td>169</td></tr>
 <tr><td>Brazil</td><td>149</td></tr>
@@ -191,7 +192,7 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 <p>What are the journals in which ChemRxiv preprints are published (after peer review)?
    The top journals are:</p>
 <table id="journalTable"><thead><tr><th>Journal</th><th># preprints</th></tr></thead><tbody>
-<tr><td>Journal of the American Chemical Society</td><td>386</td></tr>
+<tr><td>Journal of the American Chemical Society</td><td>387</td></tr>
 <tr><td>Angewandte Chemie</td><td>312</td></tr>
 <tr><td>Chemical Science</td><td>274</td></tr>
 <tr><td>Journal of Chemical Theory and Computation</td><td>181</td></tr>
@@ -200,8 +201,8 @@ borderWidth: [2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,2]}],
 <tr><td>The Journal of Physical Chemistry C</td><td>157</td></tr>
 <tr><td>Journal of Chemical Information and Modeling</td><td>137</td></tr>
 <tr><td>The Journal of Physical Chemistry Letters</td><td>130</td></tr>
+<tr><td>Chemistry of Materials</td><td>117</td></tr>
 <tr><td>ACS Catalysis</td><td>117</td></tr>
-<tr><td>Chemistry of Materials</td><td>116</td></tr>
 <tr><td>The Journal of Chemical Physics</td><td>115</td></tr>
 <tr><td>Nature Communications</td><td>109</td></tr>
 <tr><td>Chemical Communications</td><td>109</td></tr>
